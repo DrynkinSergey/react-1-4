@@ -1,39 +1,44 @@
 import { useState } from 'react'
+import { AddForm } from '../AddForm/AddForm'
+import { nanoid } from 'nanoid'
 
 export const Notes = () => {
-	const [isOpen, setIsOpen] = useState(false)
-	const [name, setName] = useState('Alex')
-	const [city, setCity] = useState('Lviv')
-	const [clicks, setClicks] = useState(0)
-	// const isOpen = true
+	const [notes, setNotes] = useState([
+		{ id: '1', title: 'Прочитав книгу', desc: 'Інформація про книгу' },
+		{ id: '2', title: 'Поглянути фільм', desc: 'Інформація про фільм' },
+		{ id: '3', title: 'Поглянути сайт', desc: 'Інформація про сайт' },
+		{ id: '4', title: 'Погодувати кота', desc: 'Купити віскас ' },
+	])
 
-	const handleOpen = () => {
-		console.log(isOpen)
-		setIsOpen(!isOpen)
-		console.log(isOpen)
+	const deleteNote = id => {
+		console.log(notes.filter(item => item.id !== id))
+		setNotes(prev => prev.filter(item => item.id !== id))
 	}
 
-	const handleClick = () => {
-		setName(prompt('Enter new name'))
+	const addNote = note => {
+		const newNote = {
+			title: note.title,
+			desc: note.desc,
+			id: nanoid(),
+		}
+		setNotes(prev => [...prev, newNote])
+		console.log(newNote)
 	}
-	const handleChangeCity = () => {
-		setCity(prompt('Enter new city'))
-	}
+
 	return (
 		<div>
 			<h2>Notes</h2>
-			<h2>Hello, {name}</h2>
-			<h3>Your city {city}</h3>
-			<button onClick={handleOpen}> {isOpen ? 'Close' : 'Open'} </button>
-			{isOpen && (
-				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad impedit odio, minus illum dolores consectetur eius
-					dolorem fuga quas voluptates culpa libero velit ratione, veniam fugit cum accusamus quam dolore.
-				</p>
-			)}
-			<button onClick={handleClick}>Change name</button>
-			<button onClick={handleChangeCity}>Change city</button>
-			<button onClick={() => setClicks(prev => prev + 1)}>Clicks: {clicks}</button>
+			<p>Всього нотаток: {notes.length}</p>
+			<AddForm addNote={addNote} />
+			<ul>
+				{notes.map(item => (
+					<li key={item.id}>
+						<h3>{item.title}</h3>
+						<p>{item.desc}</p>
+						<button onClick={() => deleteNote(item.id)}>Delete</button>
+					</li>
+				))}
+			</ul>
 		</div>
 	)
 }

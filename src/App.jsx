@@ -1,11 +1,10 @@
 import Greetings from './components/Greetings/Greetings'
+import { Notes } from './components/Notes/Notes'
 
 const App = () => {
 	return (
 		<div>
-			<Greetings username='Alex' age={41} isOnline={true} />
-			<div className='box'></div>
-			<h2 className='title'>Hello react</h2>
+			<Notes />
 		</div>
 	)
 }

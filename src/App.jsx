@@ -3,8 +3,9 @@ import Greetings from './components/Greetings/Greetings'
 const App = () => {
 	return (
 		<div>
-			<Greetings username='Anton' />
 			<Greetings username='Alex' age={41} isOnline={true} />
+			<div className='box'></div>
+			<h2 className='title'>Hello react</h2>
 		</div>
 	)
 }

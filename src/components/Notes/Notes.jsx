@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react'
 import { AddForm } from '../AddForm/AddForm'
 import { nanoid } from 'nanoid'
 import { SearchForm } from '../SearchForm/SearchForm'
+import { MdDeleteForever } from 'react-icons/md'
+import { FcCommandLine } from 'react-icons/fc'
+import { GrNotes } from 'react-icons/gr'
 
 export const Notes = () => {
 	const [notes, setNotes] = useState(() => {
@@ -59,8 +62,12 @@ export const Notes = () => {
 	const filteredData = getFilteredData()
 	return (
 		<div>
-			<h2>Notes</h2>
-			<p>Всього нотаток: {notes.length}</p>
+			<h2>
+				Notes <GrNotes size={48} color='violet' />
+			</h2>
+			<p>
+				Всього нотаток <FcCommandLine size={48} />: {notes.length}
+			</p>
 			<AddForm addNote={addNote} />
 			<SearchForm changeFilter={changeFilter} />
 			<hr />
@@ -70,7 +77,9 @@ export const Notes = () => {
 					<li key={item.id}>
 						<h3>{item.title}</h3>
 						<p>{item.desc}</p>
-						<button onClick={() => deleteNote(item.id)}>Delete</button>
+						<button onClick={() => deleteNote(item.id)}>
+							<MdDeleteForever size={48} color='red' />
+						</button>
 					</li>
 				))}
 			</ul>

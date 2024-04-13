@@ -39,6 +39,11 @@ export const Notes = () => {
 	}
 
 	const addNote = note => {
+		const isExist = notes.find(item => item.title === note.title)
+		if (isExist) {
+			alert('Така нотатка вже існує')
+			return
+		}
 		const newNote = {
 			title: note.title,
 			desc: note.desc,

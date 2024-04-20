@@ -19,12 +19,6 @@ export const Todolist = () => {
 	}, [todos])
 
 	const handleDeleteTodo = id => {
-		console.log(id)
-		// 1. Використати функцію сеттер (setTodos)
-		// 2. Пробіжатись по массиву todos
-		// 3. На кожній ітерації перевірити чи співпадає айді
-		// 4. Якщо так - видалити елемент, якщо ні - нічого не робити
-
 		setTodos(prev => prev.filter(item => item.id !== id))
 	}
 
@@ -49,7 +43,6 @@ export const Todolist = () => {
 		}
 	}
 	const handleAddTodo = (title, status) => {
-		// alert(title)
 		setTodos(prev => [
 			...prev,
 			{ id: nanoid(), title: title, completed: false, status: status, priority: getPriority(status) },
@@ -70,12 +63,6 @@ export const Todolist = () => {
 	}
 
 	const handleToggleTodo = id => {
-		console.log(id)
-		//1. Використати функцію сеттер (setTodos)
-		//2. Пробіжатись по масиву todos
-		//3. На кожній ітерації перевіряємо айді елемента з тим, що ми хочемо змінити
-		//4. Якщо айді співпало - змінюємо completed на протилежне значення, якщо ні - повертаємо ітем
-
 		setTodos(prev => prev.map(item => (item.id === id ? { ...item, completed: !item.completed } : item)))
 	}
 

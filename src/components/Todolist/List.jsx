@@ -1,6 +1,6 @@
 import { Todo } from './Todo'
 
-export const List = ({ todos, handleDeleteTodo, handleChangeStatus, handleToggleTodo, title }) => {
+export const List = ({ handleChangeTitle, todos, handleDeleteTodo, handleChangeStatus, handleToggleTodo, title }) => {
 	return (
 		<div>
 			<h2 className='title'>{title}</h2>
@@ -11,6 +11,7 @@ export const List = ({ todos, handleDeleteTodo, handleChangeStatus, handleToggle
 					<Todo
 						key={item.id}
 						item={item}
+						handleChangeTitle={handleChangeTitle}
 						handleChangeStatus={handleChangeStatus}
 						handleDeleteTodo={handleDeleteTodo}
 						handleToggleTodo={handleToggleTodo}

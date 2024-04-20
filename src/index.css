@@ -11,3 +11,38 @@ body{
   color: blue;
   text-align: center;
 }
+
+.list{
+  list-style: none;
+  padding: 20px;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:20px;
+  flex-direction: column;
+}
+.todo{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+  padding: 10px;
+
+
+}
+.todoWrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+.red{
+  background-color: red;
+}
+.green{
+  background-color: green;
+
+}
+.yellow{
+  background-color: yellow;
+}

@@ -22,19 +22,10 @@ export const Notes = () => {
 	const [filter, setFilter] = useState('')
 
 	useEffect(() => {
-		console.log('Hello')
-	}, [])
-
-	useEffect(() => {
-		console.log('filter', filter)
-	}, [filter])
-
-	useEffect(() => {
 		window.localStorage.setItem('notes', JSON.stringify(notes))
 	}, [notes])
 
 	const deleteNote = id => {
-		console.log(notes.filter(item => item.id !== id))
 		setNotes(prev => prev.filter(item => item.id !== id))
 	}
 
@@ -50,7 +41,6 @@ export const Notes = () => {
 			id: nanoid(),
 		}
 		setNotes(prev => [...prev, newNote])
-		console.log(newNote)
 	}
 	const changeFilter = value => {
 		setFilter(value)

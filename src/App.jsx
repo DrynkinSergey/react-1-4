@@ -1,4 +1,3 @@
-import Greetings from './components/Greetings/Greetings'
 import { Notes } from './components/Notes/Notes'
 
 const App = () => {

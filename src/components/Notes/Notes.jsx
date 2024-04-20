@@ -5,6 +5,7 @@ import { SearchForm } from '../SearchForm/SearchForm'
 import { MdDeleteForever } from 'react-icons/md'
 import { FcCommandLine } from 'react-icons/fc'
 import { GrNotes } from 'react-icons/gr'
+import { NotesList } from './NotesList'
 
 export const Notes = () => {
 	const [notes, setNotes] = useState(() => {
@@ -19,6 +20,7 @@ export const Notes = () => {
 			{ id: '4', title: 'Погодувати кота', desc: 'Купити віскас ' },
 		]
 	})
+
 	const [filter, setFilter] = useState('')
 
 	useEffect(() => {
@@ -67,17 +69,7 @@ export const Notes = () => {
 			<SearchForm changeFilter={changeFilter} />
 			<hr />
 			<h2>Current filter: {filter}</h2>
-			<ul>
-				{filteredData.map(item => (
-					<li key={item.id}>
-						<h3>{item.title}</h3>
-						<p>{item.desc}</p>
-						<button onClick={() => deleteNote(item.id)}>
-							<MdDeleteForever size={48} color='red' />
-						</button>
-					</li>
-				))}
-			</ul>
+			<NotesList deleteNote={deleteNote} notes={filteredData} />
 		</div>
 	)
 }

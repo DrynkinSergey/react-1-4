@@ -1,9 +1,11 @@
 import { Link, NavLink, Route, Routes } from 'react-router-dom'
+
 import Home from './pages/Home'
 import Images from './pages/Images'
 import Todos from './pages/Todos'
 import NotFound from './pages/NotFound'
 import SingleImage from './pages/SingleImage'
+import Favorites from './pages/Favorites'
 
 const App = () => {
 	return (
@@ -20,6 +22,9 @@ const App = () => {
 					<li>
 						<NavLink to='/todos'>Todos</NavLink>
 					</li>
+					<li>
+						<NavLink to='/favorites'>Favorites</NavLink>
+					</li>
 				</ul>
 			</header>
 			<Routes>
@@ -27,6 +32,7 @@ const App = () => {
 				<Route path='/images' element={<Images />} />
 				<Route path='/images/:imageId' element={<SingleImage />} />
 				<Route path='/todos' element={<Todos />} />
+				<Route path='/favorites' element={<Favorites />} />
 
 				<Route path='*' element={<NotFound />} />
 			</Routes>

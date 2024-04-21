@@ -1,10 +1,12 @@
 import { Todolist } from './components/Todolist/Todolist'
+import { PexelsApp } from './components/pexels/PexelsApp'
 
 const App = () => {
 	return (
-		<div>
-			<Todolist />
-		</div>
+		<>
+			{/* <Todolist /> */}
+			<PexelsApp />
+		</>
 	)
 }
 

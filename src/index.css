@@ -11,3 +11,86 @@ body{
   color: blue;
   text-align: center;
 }
+
+.list{
+  list-style: none;
+  padding: 20px;
+  margin: 0 auto;
+  display: grid;
+  max-width: 80%;
+  
+  gap:20px;
+  flex-direction: column;
+}
+.todo{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding:0 5px;
+
+
+}
+.todoWrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+.red{
+  background-color: red;
+}
+.green{
+  background-color: green;
+
+}
+.yellow{
+  background-color: yellow;
+}
+
+.btn{
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 5px 12px;
+  cursor: pointer;
+  background-color: teal;
+  color:white;
+  font-weight: bold;
+}
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 20px;
+  color:white;
+  background-color: teal;
+  font-weight: bold;
+  ul{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    
+  }
+}
+
+.active{
+  color:black;
+
+}
+a{
+  color:inherit;
+  text-decoration: none;
+}
+
+.notFound{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  flex-direction: column;
+  img{
+    max-width: 50%;
+  }
+  
+}

@@ -38,3 +38,17 @@
 1. `initialValues`
 1. `onSubmit`
 1. `options`
+
+## Axios
+
+1. Запити на сервер
+1. Services
+1. async/await
+
+## Routing
+
+1. Маршрутизація
+1. Маршрути
+1. Layout
+1. NotFound
+1. Redirect

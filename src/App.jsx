@@ -1,6 +1,4 @@
 import { Link, NavLink, Route, Routes } from 'react-router-dom'
-import { Todolist } from './components/Todolist/Todolist'
-import { PexelsApp } from './components/pexels/PexelsApp'
 import Home from './pages/Home'
 import Images from './pages/Images'
 import Todos from './pages/Todos'

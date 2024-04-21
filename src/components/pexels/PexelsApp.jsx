@@ -22,6 +22,7 @@ export const PexelsApp = () => {
 	const handleChangePage = () => {
 		setPage(prev => prev + 1)
 	}
+
 	const handleChangeQuery = query => {
 		setQuery(query)
 		setPage(1)

@@ -58,3 +58,39 @@ body{
   color:white;
   font-weight: bold;
 }
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 20px;
+  color:white;
+  background-color: teal;
+  font-weight: bold;
+  ul{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    
+  }
+}
+
+.active{
+  color:black;
+
+}
+a{
+  color:inherit;
+  text-decoration: none;
+}
+
+.notFound{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  flex-direction: column;
+  img{
+    max-width: 50%;
+  }
+  
+}

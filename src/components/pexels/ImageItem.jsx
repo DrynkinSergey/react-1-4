@@ -1,7 +1,9 @@
+import { useNavigate } from 'react-router-dom'
 import s from './PexelsApp.module.css'
 const ImageItem = ({ item }) => {
+	const navigate = useNavigate()
 	return (
-		<li className={s.item}>
+		<li onClick={() => navigate(`${item.id}`)} className={s.item}>
 			<div>
 				<img src={item.src.landscape} />
 			</div>

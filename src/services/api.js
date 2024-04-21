@@ -17,6 +17,12 @@ export const fetchPexelsImagesByQuery = async (page, query) => {
 	return res.data
 }
 
+export const fetchPexelsImageById = async id => {
+	const res = await api.get(`photos/${id}`)
+	console.log(res.data)
+	return res.data
+}
+
 // export const fetchTodosSync = () => {
 // 	axios.get('https://dummyjson.com/todos').then(res => {
 // 		console.log(res.data)

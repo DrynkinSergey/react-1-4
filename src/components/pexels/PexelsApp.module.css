@@ -55,3 +55,38 @@
     box-shadow: 0 0 4px 2px gray;
   }
 }
+
+
+.single{
+  padding:  20px;
+  min-height: 90vh;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap:10px;
+  .content{
+    height: 50%;
+    padding: 40px;
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+  }
+  img{
+    margin: 40px auto;
+    display: block;
+    border: 4px solid white;
+    border-radius: 8px;
+  }
+  h1{
+    text-align: center;
+    font-size: 32px;
+  }
+  p{
+    text-align: center;
+  }
+  div{
+    display: flex;
+    justify-content: center;
+  }
+}

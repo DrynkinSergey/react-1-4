@@ -1,4 +1,3 @@
-import { Notes } from './components/Notes/Notes'
 import { Todolist } from './components/Todolist/Todolist'
 
 const App = () => {

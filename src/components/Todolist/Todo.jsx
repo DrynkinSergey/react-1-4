@@ -12,7 +12,7 @@ export const Todo = ({ handleChangeTitle, item, handleDeleteTodo, handleToggleTo
 			})}
 		>
 			<input onChange={() => handleToggleTodo(item.id)} checked={item.completed} type='checkbox' />
-			<p onClick={() => handleChangeTitle(item.id)}>{item.title}</p>
+			<p onClick={() => handleChangeTitle(item.id)}>{item.todo}</p>
 			<div>
 				<select value={item.status} onChange={e => handleChangeStatus(item.id, e.target.value)}>
 					{statuses.map(status => (

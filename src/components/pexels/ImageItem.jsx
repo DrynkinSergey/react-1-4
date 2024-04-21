@@ -20,7 +20,7 @@ const ImageItem = ({ item, handleAddToFav, favorites, remoteFromFav }) => {
 				)}
 			</div>
 			<div>
-				<img onClick={() => navigate(`${item.id}`)} src={item.src.landscape} />
+				<img onClick={() => navigate(`/images/${item.id}`)} src={item.src.landscape} />
 			</div>
 			<p>{item.alt}</p>
 		</li>

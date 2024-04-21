@@ -15,9 +15,10 @@ body{
 .list{
   list-style: none;
   padding: 20px;
-  margin: 0;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  max-width: 80%;
+  
   gap:20px;
   flex-direction: column;
 }
@@ -26,7 +27,8 @@ body{
   justify-content: space-between;
   align-items: center;
   border: 1px solid black;
-  padding: 10px;
+  border-radius: 8px;
+  padding:0 5px;
 
 
 }
@@ -45,4 +47,14 @@ body{
 }
 .yellow{
   background-color: yellow;
+}
+
+.btn{
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 5px 12px;
+  cursor: pointer;
+  background-color: teal;
+  color:white;
+  font-weight: bold;
 }

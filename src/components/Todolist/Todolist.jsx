@@ -3,20 +3,26 @@ import { AddForm } from './AddForm'
 import { List } from './List'
 import { nanoid } from 'nanoid'
 import { toast } from 'react-toastify'
+import { fetchTodos } from '../../services/api'
 
 export const Todolist = () => {
-	const [todos, setTodos] = useState(() => {
-		const savedTodos = JSON.parse(window.localStorage.getItem('todos'))
-		if (savedTodos?.length) {
-			return savedTodos
-		}
-		return []
-	})
-	const [sortedType, setSortedType] = useState('ASC')
+	const [todos, setTodos] = useState([])
+	const [skip, setSkip] = useState(0)
 
 	useEffect(() => {
-		window.localStorage.setItem('todos', JSON.stringify(todos))
-	}, [todos])
+		// Створення функції для отримання даних з API
+		const getData = async () => {
+			try {
+				// Отримання даних з API
+				const data = await fetchTodos(skip)
+				// Встановлення нових даних
+				setTodos(data.todos)
+			} catch (error) {
+				console.log(error.message)
+			}
+		}
+		getData()
+	}, [skip])
 
 	const handleDeleteTodo = id => {
 		setTodos(prev => prev.filter(item => item.id !== id))
@@ -57,6 +63,10 @@ export const Todolist = () => {
 		setTodos(prev => prev.map(item => (item.id === id ? { ...item, completed: !item.completed } : item)))
 	}
 
+	const handleChangeSkip = () => {
+		setSkip(prev => prev + 10)
+	}
+
 	return (
 		<div>
 			<AddForm handleAddTodo={handleAddTodo} />
@@ -70,6 +80,9 @@ export const Todolist = () => {
 					handleDeleteTodo={handleDeleteTodo}
 				/>
 			</div>
+			<button onClick={handleChangeSkip} className='btn'>
+				Load more
+			</button>
 		</div>
 	)
 }

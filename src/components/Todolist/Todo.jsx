@@ -11,6 +11,7 @@ export const Todo = ({ handleChangeTitle, item, handleDeleteTodo, handleToggleTo
 				yellow: item.status === 'low',
 			})}
 		>
+			<p>{item.id}.</p>
 			<input onChange={() => handleToggleTodo(item.id)} checked={item.completed} type='checkbox' />
 			<p onClick={() => handleChangeTitle(item.id)}>{item.todo}</p>
 			<div>
